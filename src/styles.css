@@ -1,1 +1,143 @@
 /* You can add global styles to this file, and also import other style files */
+:root { font-family: 'Inter', sans-serif; }
+
+:host {
+    display: block;
+  }
+  
+  @supports (font-variation-settings: normal) {
+    :root {
+      font-family: 'Inter var', sans-serif;
+    }
+  }
+  
+  body {
+    margin: 0;
+    background-color: #f1f5f9;
+    color: #cbd5e1;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
+  *::selection {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+  }
+  
+  .sidebar {
+    background-color: #111827;
+    min-height: 100vh;
+    width: 16rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
+    z-index: 10;
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+  
+  .logo span {
+    color: #3b82f6;
+  }
+  
+  .logo p {
+    color: #64748b;
+    font-size: 0.875rem;
+  }
+  
+  .profile {
+    margin-top: 2rem;
+  }
+  
+  .profile p {
+    color: #64748b;
+  }
+  
+  .profile a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .profile img {
+    border-radius: 9999px;
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .profile span:last-child {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .nav {
+    /*padding: 0 1.5rem;*/
+  }
+  
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #334155;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out;
+    color: inherit;
+  }
+  
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+  }
+  
+  .nav .item-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.25;
+  }
+  
+  .nav .item-subtitle {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .logo h1 {
+      font-size: 2rem;
+    }
+  
+    .profile span:last-child {
+      font-size: 1.125rem;
+    }
+  
+    .nav .item-subtitle {
+      display: block;
+    }
+  }
+  
+  .bg-blue {
+    background-color: #1e40af;
+  }
