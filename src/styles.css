@@ -113,7 +113,6 @@
   
   .nav .item-title {
     font-size: 1.125rem;
-    font-weight: bold;
     color: white;
     line-height: 1.25;
   }
@@ -141,3 +140,6 @@
   .bg-blue {
     background-color: #1e40af;
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

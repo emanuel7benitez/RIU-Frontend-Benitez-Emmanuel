@@ -8,5 +8,6 @@ export interface Superheroe {
     edad: number;
     activo: boolean;
     img?: string;
+    descripcion?: string;
   }
   

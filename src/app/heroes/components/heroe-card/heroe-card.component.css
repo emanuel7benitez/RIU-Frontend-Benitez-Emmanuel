@@ -1,0 +1,11 @@
+.heroe-card {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heroe-header-image {
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+  background-size: cover;
+}

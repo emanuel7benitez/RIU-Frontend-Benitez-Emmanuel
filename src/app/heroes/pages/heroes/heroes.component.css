@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.main-content {
+  margin-left: 320px;
+  color: #000;
+}
+
+.heores-list{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+}
