@@ -1,0 +1,13 @@
+<div class="main-content">
+    <h2>Lista de Heroes</h2>
+
+    <mat-paginator [length]="totalHeroes()" [pageSize]="5" [pageSizeOptions]="[5,10,15]" (page)="onPageChange($event)" aria-label="Select page">
+    </mat-paginator>
+
+    <div class="heores-list">
+
+        @for (heroe of heroes(); track heroe.id) {
+        <app-heroe-card [heroe]="heroe"></app-heroe-card>
+        }
+    </div>
+</div>
