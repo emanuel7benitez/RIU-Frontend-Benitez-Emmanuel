@@ -1,59 +1,62 @@
-# Heroesapp
+# 💥 RIU Frontend - Benitez Emmanuel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Aplicación frontend desarrollada con Angular para el sistema RIU. Provee una interfaz moderna y dinámica para la gestión de héroes y otras entidades, con soporte para paginación, filtrado y edición.
 
-## Development server
+## 🚀 Tecnologías utilizadas
 
-To start a local development server, run:
+- ✅ Angular 19
+- 🎨 TailwindCSS
+- 📦 Angular Material
+- 🔁 RxJS + Signals
+- ⏳ Ngx Spinner
 
-```bash
-ng serve
-```
+## 📸 Vista previa
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Vista previa de la app](./public/img/screnshotapp.png)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Instalación
 
 ```bash
-ng generate --help
+git clone https://github.com/emanuel7benitez/RIU-Frontend-Benitez-Emmanuel.git
+cd RIU-Frontend-Benitez-Emmanuel
+npm install
+npm run start
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧪 Testing
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📁 Estructura del proyecto
 
-For end-to-end (e2e) testing, run:
+```
+├── public/
+│   └── img/           # Imágenes accesibles públicamente, como avatares o recursos cargados por el usuario
+├── src/
+│   └── app/
+│       └── heroes/
+│           ├── components/   # Componentes reutilizables como tarjetas, encabezados o formularios
+│           ├── interfaces/   # Tipado TypeScript (interfaces como Superheroe, etc.)
+│           ├── pages/        # Vistas principales como listado de héroes o detalle
+│           └── services/     # Servicios de Angular como el manejo de datos o lógica de negocio
 
-```bash
-ng e2e
+
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## ✅ Funcionalidades principales
 
-## Additional Resources
+- Listado paginado de héroes
+- Filtro en tiempo real por nombre, alias o poderes
+- Creación, edición y eliminación lógica de héroes
+- Visualización detallada por ID con rutas dinámicas
+- Spinner de carga simulado con delay opcional
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 👨‍💻 Autor
+
+- [Emmanuel Benitez](https://github.com/emanuel7benitez)
+
+---
+
+📌 *Este proyecto fue desarrollado como parte de una práctica técnica con enfoque en buenas prácticas, arquitectura limpia y uso de Angular Signals.*
