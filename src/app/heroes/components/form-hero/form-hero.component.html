@@ -1,0 +1,113 @@
+<div class="px-40 flex flex-1 justify-center py-5">
+  <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+    <div class="flex flex-wrap justify-between gap-3 p-4">
+      <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{title}}</p>
+    </div>
+    <form [formGroup]="heroeForm" (ngSubmit)="submit()">
+
+
+      <div class="flex  flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Nombre *</p>
+          <input formControlName="nombre" placeholder="Enter superhero name"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Alias *</p>
+          <input formControlName="alias" placeholder="Enter superhero alias"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+      </div>
+      <div class="flex  flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Activo Desde *</p>
+          <input formControlName="activoDesde" placeholder="Enter superhero weakness"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Ocupación</p>
+          <input formControlName="ocupacion" placeholder="Enter superhero origin"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+      </div>
+      <div class="flex  flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Afilicaciones</p>
+          <input formControlName="afiliaciones" placeholder="Enter superhero affiliation"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Base de Operaciones *</p>
+          <input formControlName="baseDeOperaciones" placeholder="Enter superhero first appearance"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"
+            value="" />
+        </label>
+      </div>
+      <div class="flex flex-col gap-4 px-4 py-3">
+        <p class="text-white text-base font-medium leading-normal pb-2">Poder *</p>
+        @for (poder of poderes.controls; track $index) {
+
+        <label class="flex min-w-40 flex-1">
+          <div class="flex w-full flex-1 items-stretch rounded-xl">
+            <input matInput [formControl]="poder" placeholder="Poder #{{ $index + 1 }}"
+              placeholder="Enter superhero power"
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a0a0b6] p-4 rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal"
+              value="" />
+          </div>
+          @if ($index > 0){
+
+          <div
+            class="cursor-pointer text-[#a0a0b6] flex border-none bg-[#2a2a37] items-center justify-center pr-4 rounded-r-xl border-l-0"
+            data-icon="Plus" data-size="24px" data-weight="regular" (click)="removePoder($index)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" style="color: red;">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+          </div>
+          }
+        </label>
+
+
+        }
+
+        <div
+          class="cursor-pointer text-[#a0a0b6] flex border-none bg-[#2a2a37] items-center justify-center pr-4 rounded-xl border-l-0"
+          data-icon="Plus" data-size="24px" data-weight="regular" (click)="addPoder()">
+          <p>Añadir Poder </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z">
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="flex  flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Imagen</p>
+          <input formControlName="img" type="file" (change)="onFileSelected($event)" accept="image/*"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none h-14 placeholder:text-[#a8a8ad] p-4 text-base font-normal leading-normal" />
+        </label>
+      </div>
+      <div class="flex  flex-wrap items-end gap-4 px-4 py-3">
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-white text-base font-medium leading-normal pb-2">Descripción</p>
+          <textarea formControlName="descripcion" placeholder="Enter superhero description"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2a2a37] focus:border-none min-h-36 placeholder:text-[#a0a0b6] p-4 text-base font-normal leading-normal"></textarea>
+        </label>
+      </div>
+      <div class="flex px-4 py-3">
+        <button
+          class="flex min-w-[84px]  cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 flex-1 bg-[#0c0c3b] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+          <span class="truncate">{{title}}</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

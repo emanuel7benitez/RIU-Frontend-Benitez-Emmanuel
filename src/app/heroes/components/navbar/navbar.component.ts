@@ -13,4 +13,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavbarComponent { 
   @Input() menu: Menu[] = [...MENU_DATA];
+  @Input()  title: string = 'Superheroes'
 }

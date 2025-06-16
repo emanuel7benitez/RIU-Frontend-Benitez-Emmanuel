@@ -1,0 +1,6 @@
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">{{title}}</h2>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+    @for (power of powers; track power) {
+        <app-heroe-chip [item]="power"></app-heroe-chip>
+    }
+</div>

@@ -1,0 +1,16 @@
+<div class="flex p-4 @container">
+    <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+        <div class="flex gap-4">
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                style='background-image: url({{img}});'>
+            </div>
+            <div class="flex flex-col justify-center">
+                <p class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">{{name}}</p>
+                <p class="text-[#8e99cc] text-base font-normal leading-normal">
+                    {{description}}
+                </p>
+                <p class="text-[#8e99cc] text-base font-normal leading-normal">Active since {{active ? active  : 'Unknown'}}</p>
+            </div>
+        </div>
+    </div>
+</div>

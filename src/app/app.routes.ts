@@ -12,11 +12,16 @@ export const routes: Routes = [
             loadComponent: () =>
               import('./heroes/pages/heroes/heroes.component'),
           },
-          /* {
-            path: 'heroes/:query',
+          {
+            path: 'heroes/:id',
             loadComponent: () =>
-              import('./gifs/pages/gif-history/gif-history.component'),
-          }, */
+              import('./heroes/pages/heroe-detail/heroe-detail.component'),
+          },
+          {
+            path: 'add',
+            loadComponent: () =>
+              import('./heroes/pages/create-hero/create-hero.component'),
+          },
           {
             path: '**',
             redirectTo: 'heroes',

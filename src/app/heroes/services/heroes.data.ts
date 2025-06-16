@@ -2,125 +2,197 @@ import { Superheroe } from "../interfaces/heroes.interface";
 
 
 export const SUPERHEROES_DATA: Superheroe[] = 
-
 [
   {
-    "id": 1,
-    "nombre": "Clark Kent",
-    "alias": "Superman",
-    "poderes": ["Fuerza sobrehumana", "Vuelo", "Visión láser"],
-    "origen": "Krypton",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 35,
-    "activo": true,
-    "img": "/img/superman.png",
-    "descripcion": "El último hijo de Krypton, defensor de la justicia y símbolo de esperanza."
+    id: 1,
+    nombre: "Capitán Cometa",
+    alias: "Adam Blake",
+    activoDesde: 2018,
+    img: "/img/s1.png",
+    descripcion: "Un héroe cósmico con vastos poderes, el Capitán Cometa protege la galaxia de amenazas inimaginables.",
+    activo: true,
+    poderes: [
+      "Manipulación de energía",
+      "Generación de campos de fuerza",
+      "Vuelo",
+      "Visión cósmica"
+    ],
+    biografia: {
+      nombreReal: "Adam Blake",
+      ocupacion: "Guardián cósmico",
+      baseDeOperaciones: "Estación espacial móvil",
+      afiliaciones: "Alianza Galáctica"
+    }
   },
   {
-    "id": 2,
-    "nombre": "Bruce Wayne",
-    "alias": "Batman",
-    "poderes": ["Intelecto brillante", "Habilidades de combate", "Tecnología avanzada"],
-    "origen": "Gotham City",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 40,
-    "activo": true,
-    "img": "/img/batman.png",
-    "descripcion": "El caballero oscuro de Gotham que lucha contra el crimen con astucia y determinación."
+    id: 2,
+    nombre: "Ultra-Hombre",
+    alias: "Jonathan Clark",
+    activoDesde: 2015,
+    img: "/img/s2.png",
+    activo: true,
+    descripcion: "Una versión alterna de Superman de un universo de antimateria, Ultra-Hombre usa su inmenso poder para dominar en lugar de proteger.",
+    poderes: [
+      "Fuerza sobrehumana",
+      "Visión calorífica",
+      "Vuelo",
+      "Invulnerabilidad"
+    ],
+    biografia: {
+      nombreReal: "Jonathan Clark",
+      ocupacion: "Ejecutor del Sindicato del Crimen",
+      baseDeOperaciones: "Tierra de Antimateria",
+      afiliaciones: "Sindicato del Crimen"
+    }
   },
   {
-    "id": 3,
-    "nombre": "Diana Prince",
-    "alias": "Wonder Woman",
-    "poderes": ["Fuerza sobrehumana", "Velocidad", "Lazo de la verdad"],
-    "origen": "Themyscira",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 3000,
-    "activo": true,
-    "img": "/img/wonder_woman.png",
-    "descripcion": "Guerrera amazona con un fuerte sentido de la justicia y la paz."
+    id: 3,
+    nombre: "Linterna Verde",
+    alias: "Hal Jordan",
+    activoDesde: 2010,
+    img: "/img/s3.png",
+    activo: true,
+    descripcion: "Un intrépido piloto de pruebas elegido para portar un anillo poderoso, Hal Jordan protege el universo como miembro del Cuerpo de Linternas Verdes.",
+    poderes: [
+      "Construcciones de energía",
+      "Vuelo",
+      "Campo de fuerza",
+      "Traducción universal"
+    ],
+    biografia: {
+      nombreReal: "Hal Jordan",
+      ocupacion: "Miembro del Cuerpo de Linternas Verdes",
+      baseDeOperaciones: "Sector 2814",
+      afiliaciones: "Liga de la Justicia, Cuerpo de Linternas Verdes"
+    }
   },
   {
-    "id": 4,
-    "nombre": "Barry Allen",
-    "alias": "Flash",
-    "poderes": ["Velocidad extrema", "Manipulación del tiempo"],
-    "origen": "Central City",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 28,
-    "activo": true,
-    "img": "/img/flash.png",
-    "descripcion": "El hombre más rápido del mundo, siempre listo para correr hacia el peligro."
+    id: 4,
+    nombre: "Flash",
+    alias: "Barry Allen",
+    activoDesde: 2012,
+    img: "/img/s4.png",
+    activo: true,
+    descripcion: "Dotado de súper velocidad, Barry Allen viaja a través del tiempo y el espacio para salvar vidas y resolver crímenes como Flash.",
+    poderes: [
+      "Súper velocidad",
+      "Viaje en el tiempo",
+      "Intangibilidad",
+      "Sentido de la Fuerza de la Velocidad"
+    ],
+    biografia: {
+      nombreReal: "Barry Allen",
+      ocupacion: "Científico forense",
+      baseDeOperaciones: "Ciudad Central",
+      afiliaciones: "Liga de la Justicia"
+    }
   },
   {
-    "id": 5,
-    "nombre": "Hal Jordan",
-    "alias": "Green Lantern",
-    "poderes": ["Creación de objetos con energía", "Fuerza de voluntad"],
-    "origen": "Coast City",
-    "afiliacion": "Green Lantern Corps",
-    "edad": 33,
-    "activo": true,
-    "img": "/img/green_lantern.png",
-    "descripcion": "Protector intergaláctico con un anillo de poder que transforma pensamientos en acción."
+    id: 5,
+    nombre: "Mujer Maravilla",
+    alias: "Diana Prince",
+    activoDesde: 2009,
+    img: "/img/s5.png",
+    activo: true,
+    descripcion: "Una princesa guerrera amazona, la Mujer Maravilla lucha con compasión y fuerza por la paz y la justicia.",
+    poderes: [
+      "Fuerza sobrehumana",
+      "Vuelo",
+      "Maestría en combate",
+      "Lazo de la Verdad"
+    ],
+    biografia: {
+      nombreReal: "Diana Prince",
+      ocupacion: "Embajadora amazona",
+      baseDeOperaciones: "Themyscira / Washington D.C.",
+      afiliaciones: "Liga de la Justicia"
+    }
   },
   {
-    "id": 6,
-    "nombre": "Arthur Curry",
-    "alias": "Aquaman",
-    "poderes": ["Control del agua", "Comunicación con criaturas marinas"],
-    "origen": "Atlantis",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 38,
-    "activo": true,
-    "img": "/img/aquaman.png",
-    "descripcion": "Rey de Atlantis y protector de los océanos."
+    id: 6,
+    nombre: "Aquaman",
+    alias: "Arthur Curry",
+    activoDesde: 2011,
+    img: "/img/s6.png",
+    activo: true,
+    descripcion: "Mitad humano y mitad atlante, Aquaman es el puente entre dos mundos y el protector de los siete mares.",
+    poderes: [
+      "Telepatía marina",
+      "Fuerza sobrehumana",
+      "Respiración subacuática",
+      "Combate con tridente"
+    ],
+    biografia: {
+      nombreReal: "Arthur Curry",
+      ocupacion: "Rey de la Atlántida",
+      baseDeOperaciones: "Atlántida",
+      afiliaciones: "Liga de la Justicia"
+    }
   },
   {
-    "id": 7,
-    "nombre": "J'onn J'onzz",
-    "alias": "Martian Manhunter",
-    "poderes": ["Telepatía", "Cambio de forma", "Invisibilidad"],
-    "origen": "Marte",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 1000,
-    "activo": true,
-    "descripcion": "Un marciano con habilidades psíquicas y gran empatía por la humanidad."
+    id: 7,
+    nombre: "Detective Marciano",
+    alias: "J'onn J'onzz",
+    activoDesde: 2005,
+    img: "/img/s7.png",
+    activo: true,
+    descripcion: "El último hijo de Marte, el Detective Marciano es un cambiaformas telepático que usa sus poderes para proteger la Tierra.",
+    poderes: [
+      "Telepatía",
+      "Cambio de forma",
+      "Invisibilidad",
+      "Visión marciana"
+    ],
+    biografia: {
+      nombreReal: "J'onn J'onzz",
+      ocupacion: "Detective / Héroe",
+      baseDeOperaciones: "Torre de vigilancia",
+      afiliaciones: "Liga de la Justicia"
+    }
   },
   {
-    "id": 8,
-    "nombre": "Victor Stone",
-    "alias": "Cyborg",
-    "poderes": ["Tecnología integrada", "Fuerza aumentada", "Interfaz con sistemas"],
-    "origen": "Ciudad desconocida",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 25,
-    "activo": true,
-    "descripcion": "Un héroe mitad hombre mitad máquina con acceso a cualquier red tecnológica."
+    id: 8,
+    nombre: "Hombre Halcón",
+    alias: "Carter Hall",
+    activoDesde: 2013,
+    img: "/img/s8.png",
+    activo: true,
+    descripcion: "Reencarnado a través de las eras, el Hombre Halcón es un guerrero atado por el destino y las alas de metal Nth.",
+    poderes: [
+      "Vuelo",
+      "Fuerza mejorada",
+      "Reencarnación",
+      "Maestría con armas"
+    ],
+    biografia: {
+      nombreReal: "Carter Hall",
+      ocupacion: "Arqueólogo",
+      baseDeOperaciones: "St. Roch",
+      afiliaciones: "Sociedad de la Justicia, Liga de la Justicia"
+    }
   },
   {
-    "id": 9,
-    "nombre": "Shayera Hol",
-    "alias": "Hawkgirl",
-    "poderes": ["Vuelo", "Reencarnación", "Combate con maza mágica"],
-    "origen": "Thanagar",
-    "afiliacion": "Liga de la Justicia",
-    "edad": 29,
-    "activo": true,
-    "descripcion": "Guerrera alada con gran espíritu combativo y sentido del deber."
-  },
-  {
-    "id": 10,
-    "nombre": "Zatanna Zatara",
-    "alias": "Zatanna",
-    "poderes": ["Hechizos", "Magia poderosa", "Manipulación mágica hablada al revés"],
-    "origen": "Nueva York",
-    "afiliacion": "Liga de la Justicia Oscura",
-    "edad": 30,
-    "activo": true,
-    "img": "/img/zatanna.png",
-    "descripcion": "Hechicera talentosa y carismática, defensora contra amenazas mágicas."
+    id: 9,
+    nombre: "Chica Halcón",
+    alias: "Shiera Sanders Hall",
+    activoDesde: 2013,
+    img: "/img/s9.png",
+    activo: false,
+    descripcion: "Una feroz guerrera con un fuerte sentido de la justicia, Chica Halcón usa sus alas y su maza para combatir el mal.",
+    poderes: [
+      "Vuelo",
+      "Durabilidad mejorada",
+      "Reencarnación",
+      "Habilidad en combate"
+    ],
+    biografia: {
+      nombreReal: "Shiera Sanders Hall",
+      ocupacion: "Historiadora / Guerrera",
+      baseDeOperaciones: "St. Roch",
+      afiliaciones: "Sociedad de la Justicia, Liga de la Justicia"
+    }
   }
-]
+];
+
 
   
