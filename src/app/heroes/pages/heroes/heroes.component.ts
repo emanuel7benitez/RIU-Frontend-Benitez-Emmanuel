@@ -8,18 +8,19 @@ import { HeroeCardComponent } from '../../components/heroe-card/heroe-card.compo
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NotFoundHeroComponent } from "../../components/not-found-hero/not-found-hero.component";
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [HeroeCardComponent, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, NotFoundHeroComponent],
+  imports: [HeroeCardComponent, NgxSpinnerModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, NotFoundHeroComponent],
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HeroesComponent { 
-  constructor(private heroesService: HeroesService) {
+  constructor(private heroesService: HeroesService, private spinner: NgxSpinnerService) {
     this.heroesService.changePage(0);
   }
 

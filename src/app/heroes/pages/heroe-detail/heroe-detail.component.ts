@@ -10,17 +10,19 @@ import { HeroeBiographyComponent } from "../../components/heroe-biography/heroe-
 import Swal from 'sweetalert2'
 import { MatDialog, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 import { ModalEditComponent } from '../../components/modal-edit/modal-edit.component';
+import { NgxSpinner, NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-heroe-detail',
   standalone: true,
-  imports: [RouterModule, MatButtonModule, NotFoundHeroComponent, HeaderDetailComponent, HeroePowersComponent, HeroeBiographyComponent, MatDialogModule],
+  imports: [RouterModule, MatButtonModule, NgxSpinnerModule, NotFoundHeroComponent, HeaderDetailComponent, HeroePowersComponent, HeroeBiographyComponent, MatDialogModule],
   templateUrl: './heroe-detail.component.html',
   styleUrls: ['./heroe-detail.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HeroeDetailComponent {
   private route = inject(ActivatedRoute);
+  private spinner = inject(NgxSpinnerService);
   private router = inject(Router);
   private heroesService = inject(HeroesService);
   readonly dialog = inject(MatDialog);
@@ -39,11 +41,15 @@ export default class HeroeDetailComponent {
       confirmButtonText: "Eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.heroesService.eliminarLogico(id);
-        this.heroe = null;
-        this.heroesService.changePage(0);
-        this.router.navigate(['/dashboard/heroes']);
-        Swal.fire("Super Heroe Eliminado!", "", "success");
+        this.spinner.show();
+        setTimeout(() => {
+          this.heroesService.eliminarLogico(id);
+          this.heroe = null;
+          this.heroesService.changePage(0);
+          this.router.navigate(['/dashboard/heroes']);
+          this.spinner.hide();
+          Swal.fire("Super Heroe Eliminado!", "", "success");
+        }, 1000)
       }
     });
   }
@@ -52,7 +58,6 @@ export default class HeroeDetailComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.id = 'my-dialog';
     dialogConfig.width = '1020px';
-    dialogConfig.minHeight = '600px';
     dialogConfig.maxWidth = '1020px';
     dialogConfig.data = {
       hero: this.heroe
@@ -62,10 +67,14 @@ export default class HeroeDetailComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result.heroe}`);
       if (result && result.heroe) {
-        this.heroesService.editar(this.heroe!.id, result.heroe);
+        this.spinner.show();
+        setTimeout(()=>{
+          this.heroesService.editar(this.heroe!.id, result.heroe);
         this.heroesService.changePage(0);
         this.router.navigate(['/dashboard/heroes']);
+        this.spinner.hide();
         Swal.fire("Super Heroe Editado!", "", "success");
+        }, 1000)
       }
     });
 
