@@ -1,0 +1,24 @@
+<div class="navbar">
+    <div class="flex items-center gap-4 text-white">
+        <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+                    fill="currentColor"></path>
+            </svg>
+        </div>
+        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">{{title}}</h2>
+    </div>
+    <div class="flex items-center gap-9">
+        @for (item of menu; track item.route) {
+        <a class="text-white text-sm font-medium leading-normal flex flex-column gap-2" [routerLink]="item.route" routerLinkActive="bg-blue"
+            [routerLinkActiveOptions]="{ exact: true }">
+            <div>
+                <i class="{{item.icon}}"></i>
+            </div>
+            <div>
+                <span class="item-title">{{item.title}}</span>
+            </div>
+        </a>
+        }
+    </div>
+</div>

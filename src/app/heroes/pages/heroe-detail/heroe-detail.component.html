@@ -1,0 +1,37 @@
+<div>
+    <div class="relative flex size-full min-h-screen flex-col dark group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-40 flex flex-1 justify-center py-5">
+                @if (this.heroe) {
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <app-header-detail [img]="this.heroe.img || null" [name]="this.heroe.nombre"
+                        [description]="this.heroe.descripcion || 'Sin descripción'" [active]="this.heroe.activoDesde"></app-header-detail>
+
+                        <app-heroe-powers [powers]="this.heroe.poderes"></app-heroe-powers>
+                        <app-heroe-biography [biography]="this.heroe.biografia"></app-heroe-biography>
+
+                    <div class="flex justify-stretch">
+                        <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-end">
+                            <button
+                                (click)="editHeroe()"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#21284a] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                                <span class="truncate">Edit</span>
+                            </button>
+                            <button (click)="deleteHeroe(heroe.id)"
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#607afb] text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                                <span class="truncate">Delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }@else {
+    <app-not-found-hero></app-not-found-hero>
+    }
+            </div>
+        </div>
+    
+    </div>
+
+    
+
+</div>

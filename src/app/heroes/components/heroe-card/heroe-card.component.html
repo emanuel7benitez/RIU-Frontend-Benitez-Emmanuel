@@ -1,0 +1,10 @@
+
+  <div (click)="verDetalle(heroe.id)" class="hero-card flex flex-col gap-3 pb-3 cursor-pointer">
+    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+      style='background-image: url({{this.imgHero}});'>
+    </div>
+    <div>
+      <p class="text-white text-base font-medium leading-normal">{{heroe.nombre}}</p>
+      <p class="text-[#989ac3] text-sm font-normal leading-normal">{{heroe.alias}}</p>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+
+
+.heores-list{
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+

@@ -1,0 +1,7 @@
+<mat-dialog-content>
+    <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+  </button>
+    <app-form-hero (emitFormSubmit)="onFormSubmit($event)" [heroe]="data.hero" [title]="'Editar Heroe'"></app-form-hero>
+    
+</mat-dialog-content>
