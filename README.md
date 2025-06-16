@@ -2,6 +2,12 @@
 
 Aplicación frontend desarrollada con Angular para el sistema RIU. Provee una interfaz moderna y dinámica para la gestión de héroes y otras entidades, con soporte para paginación, filtrado y edición.
 
+### 📦 Demo
+
+Accedé a la aplicación funcionando en el siguiente enlace:
+
+🔗 [riuheroapp.netlify.app](https://riuheroapp.netlify.app/dashboard/heroes)
+
 ## 🚀 Tecnologías utilizadas
 
 - ✅ Angular 19
