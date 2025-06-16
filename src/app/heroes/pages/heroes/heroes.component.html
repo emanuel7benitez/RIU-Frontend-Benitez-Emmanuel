@@ -1,13 +1,17 @@
-<div class="main-content">
-    <h2>Lista de Heroes</h2>
+<div class="px-40 flex flex-1 justify-center py-5">
+    <div *ngIf="heroes.length" class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="flex flex-wrap justify-between gap-3 p-4">
+            <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Superheroes</p>
+        </div>
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
 
-    <mat-paginator [length]="totalHeroes()" [pageSize]="5" [pageSizeOptions]="[5,10,15]" (page)="onPageChange($event)" aria-label="Select page">
-    </mat-paginator>
-
-    <div class="heores-list">
-
-        @for (heroe of heroes(); track heroe.id) {
-        <app-heroe-card [heroe]="heroe"></app-heroe-card>
-        }
+            @for (heroe of heroes; track heroe.id) {
+            <app-heroe-card [heroe]="heroe"></app-heroe-card>
+            }
+        </div>
+        <mat-paginator style="background-color: #131420;" [length]="totalHeroes" [pageSize]="5" [pageSizeOptions]="[5,10,15]" (page)="onPageChange($event)"
+            aria-label="Select page">
+        </mat-paginator>
     </div>
+    <app-not-found-hero *ngIf="!heroes.length"></app-not-found-hero>
 </div>
