@@ -32,11 +32,7 @@
               "node_modules/ngx-spinner/animations/ball-clip-rotate-multiple.css"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "outputMode": "static"
           },
           "configurations": {
             "production": {
