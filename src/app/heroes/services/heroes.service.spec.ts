@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { HeroesService } from './heroes.service';
-import { Superheroe } from '../interfaces/heroes.interface';
 
 describe('HeroesService', () => {
   let service: HeroesService;

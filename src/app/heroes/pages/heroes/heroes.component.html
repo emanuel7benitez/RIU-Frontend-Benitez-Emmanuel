@@ -6,7 +6,7 @@
         </div>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
 
-            @for (heroe of heroes(); track heroe.id) {
+            @for (heroe of heroes; track heroe.id) {
             <app-heroe-card [heroe]="heroe"></app-heroe-card>
             }
         </div>

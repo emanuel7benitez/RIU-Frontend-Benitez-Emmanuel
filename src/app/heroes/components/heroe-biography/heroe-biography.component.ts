@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Biografia } from '../../interfaces/heroes.interface';
 
 @Component({

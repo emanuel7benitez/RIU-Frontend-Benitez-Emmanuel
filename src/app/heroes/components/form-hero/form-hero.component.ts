@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input, Input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
