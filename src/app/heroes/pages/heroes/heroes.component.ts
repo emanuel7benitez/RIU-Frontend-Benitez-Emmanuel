@@ -5,7 +5,6 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
 import { HeroeCardComponent } from '../../components/heroe-card/heroe-card.component';
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NotFoundHeroComponent } from "../../components/not-found-hero/not-found-hero.component";
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';

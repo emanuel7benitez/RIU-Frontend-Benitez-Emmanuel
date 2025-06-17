@@ -10,7 +10,7 @@ import { HeroeBiographyComponent } from "../../components/heroe-biography/heroe-
 import Swal from 'sweetalert2'
 import { MatDialog, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 import { ModalEditComponent } from '../../components/modal-edit/modal-edit.component';
-import { NgxSpinner, NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-heroe-detail',
@@ -21,17 +21,17 @@ import { NgxSpinner, NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HeroeDetailComponent {
-  private route = inject(ActivatedRoute);
-  private spinner = inject(NgxSpinnerService);
-  private router = inject(Router);
-  private heroesService = inject(HeroesService);
+  private _route = inject(ActivatedRoute);
+  private _spinner = inject(NgxSpinnerService);
+  private _router = inject(Router);
+  private _heroesService = inject(HeroesService);
   readonly dialog = inject(MatDialog);
 
   heroe!: Superheroe | null;
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroe = this.heroesService.getHeroeById(id) || null;
+    const id = Number(this._route.snapshot.paramMap.get('id'));
+    this.heroe = this._heroesService.getHeroeById(id) || null;
   }
 
   deleteHeroe(id: number) {
@@ -41,13 +41,13 @@ export default class HeroeDetailComponent {
       confirmButtonText: "Eliminar",
     }).then((result) => {
       if (result.isConfirmed) {
-        this.spinner.show();
+        this._spinner.show();
         setTimeout(() => {
-          this.heroesService.eliminarLogico(id);
+          this._heroesService.eliminarLogico(id);
           this.heroe = null;
-          this.heroesService.changePage(0);
-          this.router.navigate(['/dashboard/heroes']);
-          this.spinner.hide();
+          this._heroesService.changePage(0);
+          this._router.navigate(['/dashboard/heroes']);
+          this._spinner.hide();
           Swal.fire("Super Heroe Eliminado!", "", "success");
         }, 1000)
       }
@@ -65,14 +65,13 @@ export default class HeroeDetailComponent {
     const dialogRef = this.dialog.open(ModalEditComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result.heroe}`);
       if (result && result.heroe) {
-        this.spinner.show();
+        this._spinner.show();
         setTimeout(()=>{
-          this.heroesService.editar(this.heroe!.id, result.heroe);
-        this.heroesService.changePage(0);
-        this.router.navigate(['/dashboard/heroes']);
-        this.spinner.hide();
+          this._heroesService.editar(this.heroe!.id, result.heroe);
+        this._heroesService.changePage(0);
+        this._router.navigate(['/dashboard/heroes']);
+        this._spinner.hide();
         Swal.fire("Super Heroe Editado!", "", "success");
         }, 1000)
       }

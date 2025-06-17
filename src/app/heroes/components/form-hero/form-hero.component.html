@@ -1,7 +1,7 @@
 <div class="px-40 flex flex-1 justify-center py-5">
   <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
     <div class="flex flex-wrap justify-between gap-3 p-4">
-      <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{title}}</p>
+      <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">{{title()}}</p>
     </div>
     <form [formGroup]="heroeForm" (ngSubmit)="submit()">
 
@@ -104,7 +104,7 @@
       <div class="flex px-4 py-3">
         <button
           class="flex min-w-[84px]  cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 flex-1 bg-[#0c0c3b] text-white text-sm font-bold leading-normal tracking-[0.015em]">
-          <span class="truncate">{{title}}</span>
+          <span class="truncate">{{title()}}</span>
         </button>
       </div>
     </form>
