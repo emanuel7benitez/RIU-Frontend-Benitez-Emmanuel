@@ -9,9 +9,9 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrl: './search.component.css',
 })
 export class SearchComponent {
-  constructor(private heroesService: HeroesService) { }
+  constructor(private _heroesService: HeroesService) { }
   onFilterChange(value: string) {
-    this.heroesService.setFilter(value);
-    this.heroesService.changePage(0);
+    this._heroesService.setFilter(value);
+    this._heroesService.changePage(0);
   }
  }

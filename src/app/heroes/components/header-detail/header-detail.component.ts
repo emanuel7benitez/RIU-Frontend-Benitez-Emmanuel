@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-detail',
@@ -6,17 +6,23 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './header-detail.component.html',
   styleUrl: './header-detail.component.css',
 })
-export class HeaderDetailComponent implements OnInit{
-  @Input() name?: string = 'No Name';
-  @Input() description?: string = 'No Description';
-  @Input() active?: number = 0;
-  @Input() img?: string | null = 'https://www.gravatar.com/avatar/?d=mp&s=200';
+export class HeaderDetailComponent implements OnInit {
+  name = input<string | undefined>('No Name');
+  description = input<string | undefined>('No Description');
+  active = input<number>(0);
+  img = input<string | null>('https://www.gravatar.com/avatar/?d=mp&s=200');
+  imgUrl: string | null = '';
+
   constructor() {
-    
+
   }
 
   ngOnInit() {
-    this.img = this.img === '' || this.img === null ? 'https://www.gravatar.com/avatar/?d=mp&s=200' : this.img;
+    if (!this.img() || this.img() === '') {
+      this.imgUrl = 'https://www.gravatar.com/avatar/?d=mp&s=200';
+    } else {
+      this.imgUrl = this.img();
+    }
   }
 
- }
+}
