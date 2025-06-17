@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Menu } from '../../interfaces/menu.interface';
 import { MENU_DATA } from '../../services/menu.data';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -12,6 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent { 
-  @Input() menu: Menu[] = [...MENU_DATA];
-  @Input()  title: string = 'Superheroes'
+
+  menu = input<Menu[]>([...MENU_DATA]);
+  title = input<string>('Superheroes');
 }

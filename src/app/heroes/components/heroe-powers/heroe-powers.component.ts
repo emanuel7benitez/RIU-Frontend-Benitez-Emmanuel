@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { HeroeChipComponent } from '../heroe-chip/heroe-chip.component';
 
 @Component({
@@ -9,6 +9,6 @@ import { HeroeChipComponent } from '../heroe-chip/heroe-chip.component';
   styleUrl: './heroe-powers.component.css',
 })
 export class HeroePowersComponent { 
-  @Input() powers?: string[] = [];
-  @Input() title: string = 'Powers';
+  powers = input<string[]>([]);
+  title = input<string>('Powers');
 }

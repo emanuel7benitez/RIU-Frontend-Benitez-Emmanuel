@@ -13,7 +13,7 @@ Accedé a la aplicación funcionando en el siguiente enlace:
 - ✅ Angular 19
 - 🎨 TailwindCSS
 - 📦 Angular Material
-- 🔁 RxJS + Signals
+- 🔁 Signals
 - ⏳ Ngx Spinner
 
 ## 📸 Vista previa

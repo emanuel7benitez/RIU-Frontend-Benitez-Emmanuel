@@ -1,5 +1,5 @@
 
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormHeroComponent } from '../../components/form-hero/form-hero.component';
 import { HeroesService } from '../../services/heroes.service';
 import Swal from 'sweetalert2';
@@ -14,19 +14,19 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
   styleUrl: './create-hero.component.css'
 })
 export default class CreateHeroComponent {
-  private heroesService = inject(HeroesService);
-  private router = inject(Router);
-  private spinner = inject(NgxSpinnerService);
+  private _heroesService = inject(HeroesService);
+  private _router = inject(Router);
+  private _spinner = inject(NgxSpinnerService);
   constructor() { }
 
   guardar(e: any) {
-    this.spinner.show();
+    this._spinner.show();
     setTimeout(() => {
-      this.spinner.hide();
-      this.heroesService.agregar(e)
+      this._spinner.hide();
+      this._heroesService.agregar(e)
       Swal.fire("Heroe creado", "El heroe se ha creado correctamente", "success");
-      this.heroesService.changePage(0);
-      this.router.navigate(['/dashboard/heroes']);
+      this._heroesService.changePage(0);
+      this._router.navigate(['/dashboard/heroes']);
     }, 2000)
 
   }
